@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div class="gameover"></div>
+    <header>
+      <div class="container">
+        <h4>Hangman</h4>
+        <p>Word from: <span></span></p>
+      </div>
+    </header>
+    <section class="draw-section">
+      <div class="container">
+        <div class="drawing">
+          <div class="draw">
+            <div class="base draw-part">
+              <div class="pillar draw-part"></div>
+            </div>
+            <div class="rope draw-part">
+              <div class="knot draw-part"></div>
+            </div>
+            <div class="person">
+              <div class="head draw-part"></div>
+              <div class="body draw-part"></div>
+              <div class="hands draw-part"></div>
+              <div class="foots draw-part"></div>
+            </div>
+          </div>
+        </div>
+        <div class="letters"></div>
+      </div>
+    </section>
+    <section class="word-section">
+      <div class="container">
+        <div class="word"></div>
+      </div>
+    </section>
+    <script src="contries.json"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
