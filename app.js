@@ -11,19 +11,25 @@ class Game {
     for (let i = 0; i < this.word.length; i++) {
       // create elements
       let div = document.createElement("div");
-
+      let textNode = document.createTextNode(this.word[i]);
       // add classes
       div.classList.add("letter-box");
 
       // append
+      if (Math.random() * 100 < 10) {
+        div.append(textNode);
+        console.log("ahla");
+      }
       this.parent.append(div);
-
       // add as property
       this.letterBox.push(div);
       this.wordSplit.push(this.word[i]);
     }
   }
   start(letter, continueN) {
+    if (this.letterBox[continueN].innerHTML != "") {
+      return this.start(letter, ++continueN);
+    }
     if (letter.toLowerCase() === this.word.charAt(continueN).toLowerCase()) {
       let textNode = document.createTextNode(letter);
 
@@ -33,7 +39,6 @@ class Game {
         this.gameOver(true);
       }
 
-      console.log(continueN);
       return true;
     } else {
       this.gameOver(false);
@@ -131,14 +136,18 @@ class Hangman {
 async function contriesInfo() {
   let response = await fetch("contries.json");
   let result = await response.json();
-  result = result.map((e) => e.name);
+
+  result = await result.map((e) => e.name);
+  result = await result.filter((e) => e.length <= 14);
   result.splice(result.indexOf("Israel"), 1);
+
   return result;
 }
 async function moviesInfo() {
   let response = await fetch("movies.json");
   let result = await response.json();
-  return result.map((e) => e.Title);
+  result = result.map((e) => e.Title).filter((e) => e.length <= 14);
+  return result;
 }
 
 let hangman = new Hangman();
