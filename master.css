@@ -292,6 +292,26 @@ header .container p span {
           transform: translateX(-50%);
 }
 
+@media (max-width: 767px) {
+  .draw-section .container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .drawing {
+    width: 100% !important;
+  }
+  .letters {
+    width: 100% !important;
+  }
+  .letter-box {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .draw {
+    width: 300px;
+  }
+}
+
 .word-section .container {
   height: 80px;
   display: -ms-grid;
