@@ -16,7 +16,7 @@ class Game {
       div.classList.add("letter-box");
 
       // append
-      if (Math.random() * 100 < 10) {
+      if (Math.random() * 100 < 30) {
         div.append(textNode);
         console.log("ahla");
       }
