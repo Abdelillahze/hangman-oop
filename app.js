@@ -131,7 +131,9 @@ class Hangman {
 async function contriesInfo() {
   let response = await fetch("contries.json");
   let result = await response.json();
-  return result.map((e) => e.name);
+  result = result.map((e) => e.name);
+  result.splice(result.indexOf("Israel"), 1);
+  return result;
 }
 async function moviesInfo() {
   let response = await fetch("movies.json");
