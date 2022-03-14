@@ -18,7 +18,6 @@ class Game {
       // append
       if (Math.random() * 100 < 30) {
         div.append(textNode);
-        console.log("ahla");
       }
       this.parent.append(div);
       // add as property

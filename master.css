@@ -306,6 +306,9 @@ header .container p span {
   }
   .letters {
     width: 100% !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .letter-box {
     width: 25px !important;
